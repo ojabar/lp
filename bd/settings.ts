@@ -1,6 +1,6 @@
 const settings = {
   colors: {
-    primary: "#6455ff",
+    primary: "#028E99",
     "primary-dark": "#21646A",
     secondary: "#E3CD00",
     "secondary-light": "#fffacc",
