@@ -4,7 +4,14 @@ import settings from "./bd/settings";
 
 export default {
   darkMode: "class",
-  content: [],
+  content: [
+    // Add your paths here
+    "./components/**/*.{vue,js,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}",
+  ],
   theme: {
     extend: {
       colors: () => settings.colors,
