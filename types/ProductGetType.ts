@@ -5,7 +5,7 @@ export type ProductGetType = {
 export type ProductPageType = {
   body?: ProductPageBody[];
   seo?: SEO;
-  socialMedia?: any[];
+  socialMedia?: SocialMedia[];
 };
 
 export type ProductPageBody = {
@@ -21,7 +21,7 @@ export type ProductPageBody = {
   id?: string;
   title?: string;
   subTitle?: string;
-  Text?: string;
+  Text?: any;
   topBannerImage?: Image[];
   price?: number;
   sectionTitle?: SectionTitle[];
@@ -90,5 +90,11 @@ export type SEO = {
   title?: string;
   description?: string;
   permalink?: string;
-  image?: Image;
+  image?: Image | null;
+};
+
+export type SocialMedia = {
+  text: string;
+  link: string;
+  icon: IconType | null;
 };

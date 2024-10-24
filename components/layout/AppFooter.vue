@@ -4,56 +4,17 @@
       <BaseHeadLine size="lg"> تواصل معانا ! </BaseHeadLine>
       <hr class="opacity-20 my-3" />
       <ul class="flex flex-col gap-y-3 my-5">
-        <li>
+        <li v-for="sm in productPageBody?.socialMedia">
           <NuxtLink
             class="inline-flex font-semibold gap-x-3 items-center"
-            to="#"
+            :to="sm.link"
           >
             <span
               class="flex items-center justify-center bg-white text-primary rounded-md p-2"
             >
-              <Icon name="ic:round-phone" />
+              <Icon v-if="sm.icon?.value" :name="sm.icon?.value" />
             </span>
-            06 54 54 53 85
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink
-            class="inline-flex font-semibold gap-x-3 items-center"
-            to="#"
-          >
-            <span
-              class="flex items-center justify-center bg-white text-primary rounded-md p-2"
-            >
-              <Icon name="ic:baseline-mail" />
-            </span>
-            7raifi@gmail.com
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink
-            class="inline-flex font-semibold gap-x-3 items-center"
-            to="#"
-          >
-            <span
-              class="flex items-center justify-center bg-white text-primary rounded-md p-2"
-            >
-              <Icon name="mdi:instagram" />
-            </span>
-            instagram
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink
-            class="inline-flex font-semibold gap-x-3 items-center"
-            to="#"
-          >
-            <span
-              class="flex items-center justify-center bg-white text-primary rounded-md p-2"
-            >
-              <Icon name="ri:facebook-fill" />
-            </span>
-            facebook
+            {{ sm.text }}
           </NuxtLink>
         </li>
       </ul>
@@ -66,7 +27,19 @@
   </footer>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { productAr, productFr } from "@/public/db";
+
+const locale = ref("ar"); // Or however you manage locale in your project
+
+const productPageBody = computed(() => {
+  if (locale.value === "ar") {
+    return productAr.product;
+  } else {
+    return productFr.product;
+  }
+});
+</script>
 
 <style lang="scss">
 $appFooter: ".appFooter";

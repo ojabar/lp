@@ -62,6 +62,28 @@ const productPageBody = computed(() => {
   }
 });
 
+useHead({
+  title: productPageBody.value?.seo?.title,
+  meta: [
+    {
+      name: "description",
+      content: productPageBody.value?.seo?.description,
+    },
+    {
+      property: "og:title",
+      content: productPageBody.value?.seo?.title,
+    },
+    {
+      property: "og:description",
+      content: productPageBody.value?.seo?.description,
+    },
+    {
+      property: "og:image",
+      content: productPageBody.value?.seo?.image?.url,
+    },
+  ],
+});
+
 // const { productPageBody, fetchProductPage } = useProductPage(locale);
 
 // await fetchProductPage("lyr3r2t4cvgfermaq6oy83hp");
