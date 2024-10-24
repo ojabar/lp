@@ -1,5 +1,7 @@
 const ar = {
   shopname: "الحرفي",
+  currency: "درهم",
+
   label: {
     fullname: "الاسم الكامل",
     phone: "الهاتف",

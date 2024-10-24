@@ -1,6 +1,13 @@
 <script setup lang="ts">
-const { direction } = withDefaults(
-  defineProps<{ direction?: "right" | "left" }>(),
+const { direction, data } = withDefaults(
+  defineProps<{
+    direction?: "right" | "left";
+    data: {
+      imageUrl?: string;
+      title?: string;
+      description?: any;
+    };
+  }>(),
   {
     direction: "right",
   }
@@ -10,17 +17,14 @@ const { direction } = withDefaults(
 <template>
   <div class="cardInline2" :class="[`cardInline2--${direction}`]">
     <div class="cardInline2-img">
-      <NuxtImg src="/assets/images/products/400wat.png" />
+      <NuxtImg :src="data.imageUrl" :alt="data.title" />
     </div>
 
     <div class="cardInline2-body">
       <BaseHeadLine name="h3" size="md" class="font-bold mb-2">
-        لوريم إيبسوم
+        {{ data.title }}
       </BaseHeadLine>
-      <p>
-        خلافاَ للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور
-        في .
-      </p>
+      <BaseRichText :data="data.description" />
     </div>
   </div>
 </template>
@@ -46,6 +50,5 @@ $cardInline2: ".cardInline2";
   &-body {
     @apply text-start flex-1 text-sm;
   }
-
 }
 </style>

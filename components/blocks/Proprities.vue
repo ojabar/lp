@@ -3,25 +3,24 @@
     <LayoutContainer>
       <BaseHeadLine class="proprities-title">
         <div class="flex gap-x-3 items-center">
-          <strong> الخصائص لي غادي يعطيك </strong>
+          <strong> {{ data?.title }}</strong>
+
           <NuxtImg
             class="w-[14.35rem]"
-            src="/assets/images/products/400wat.png"
+            :src="data?.image?.url"
+            :alt="data?.title"
           />
         </div>
       </BaseHeadLine>
       <div class="grid grid-cols-12 gap-3">
-        <div class="col-span-6">
-          <CardWithIcon />
-        </div>
-        <div class="col-span-6">
-          <CardWithIcon />
-        </div>
-        <div class="col-span-6">
-          <CardWithIcon />
-        </div>
-        <div class="col-span-6">
-          <CardWithIcon />
+        <div v-for="card in data?.sectionSecondaryItems" class="col-span-6">
+          <CardWithIcon
+            :data="{
+              title: card?.title,
+              description: card.description,
+              icon: card.icon,
+            }"
+          />
         </div>
       </div>
       <div class="mt-5">
@@ -33,7 +32,15 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ProductPageBody } from "~/types/ProductGetType";
+
+const { data } = defineProps({
+  data: {
+    type: {} as PropType<ProductPageBody>,
+  },
+});
+</script>
 
 <style lang="scss">
 $proprities: ".proprities";

@@ -2,14 +2,25 @@
   <div class="checkout">
     <LayoutContainer>
       <BaseHeadLine size="xl" class="checkout-title">
-        أدخل معلوماتك
+        {{ title }}
       </BaseHeadLine>
-      <FormCheckout />
+      <FormCheckout :data="data" />
     </LayoutContainer>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ProductPageType } from "~/types/ProductGetType";
+
+const { data } = defineProps({
+  data: {
+    type: {} as PropType<ProductPageType>,
+  },
+  title: {
+    type: String,
+  },
+});
+</script>
 
 <style lang="scss">
 $checkout: ".checkout";

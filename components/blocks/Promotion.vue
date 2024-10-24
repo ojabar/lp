@@ -1,16 +1,23 @@
 <template>
   <div class="promotion">
     <BaseHeadLine size="xl" class="promotion-title">
-      <span> عرض خاص </span>
-      <small class="block">إلى خذيتي 3 غادي تقتصد 50 درهم</small>
+      <span> {{ data?.title }}</span>
+      <small class="block">{{ data?.subTitle }}</small>
     </BaseHeadLine>
     <LayoutContainer>
       <div class="grid grid-cols-12 gap-x-3 pt-10 pb-8">
-        <div class="col-span-6">
-          <CardImagePrice />
-        </div>
-        <div class="col-span-6">
-          <CardImagePrice />
+        <div
+          v-for="(card, index) in data?.items"
+          :key="index"
+          class="col-span-6"
+        >
+          <CardImagePrice
+            :data="{
+              imageUrl: card.image?.url,
+              priceOld: card.priceOld,
+              priceNew: card.priceNew,
+            }"
+          />
         </div>
         <div class="col-span-12 mt-10">
           <BaseButton type="secondary" size="large" class="w-full">
@@ -22,7 +29,15 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ProductPageBody } from "~/types/ProductGetType";
+
+const { data } = defineProps({
+  data: {
+    type: {} as PropType<ProductPageBody>,
+  },
+});
+</script>
 
 <style lang="scss">
 $promotion: ".promotion";

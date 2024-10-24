@@ -2,19 +2,35 @@
   <div class="cardPromotion">
     <div class="cardPromotion-img">
       <NuxtImg
-        src="/assets/images/promotions/promotion-1.png"
-        alt=""
+        v-if="data.imageUrl"
+        :src="data.imageUrl"
+        :alt="'promotion'"
         class=""
       />
     </div>
     <span class="cardPromotion-price">
-      <small class="cardPromotion-price-old">600.00DH</small>
-      <small class="cardPromotion-price-normal">200.00DH</small>
+      <small class="cardPromotion-price-old">
+        {{ data.priceNew }} {{ $t("currency") }}
+      </small>
+      <small class="cardPromotion-price-normal">
+        {{ data.priceOld }} {{ $t("currency") }}
+      </small>
     </span>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { data } = withDefaults(
+  defineProps<{
+    data: {
+      imageUrl?: string;
+      priceNew?: number;
+      priceOld?: number;
+    };
+  }>(),
+  {}
+);
+</script>
 
 <style lang="scss">
 $cardPromotion: ".cardPromotion";

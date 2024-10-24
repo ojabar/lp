@@ -1,18 +1,31 @@
 <template>
   <div class="cardReview">
     <div class="cardReview-top">
-      <span class="cardReview-fullname">أناس</span>
-      <BaseStars class="text-secondary text-xs mt-1" />
+      <span class="cardReview-fullname">{{ data.title }}</span>
+      <BaseStars
+        class="text-secondary text-xs mt-1"
+        :review="data.review || 0"
+      />
     </div>
     <hr class="my-2" />
     <div class="cardReview-review">
-      كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما
-      قامت مطبعة مجهولة
+      {{ data.description }}
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { data } = withDefaults(
+  defineProps<{
+    data: {
+      review?: number;
+      title?: string;
+      description?: any;
+    };
+  }>(),
+  {}
+);
+</script>
 
 <style lang="scss">
 $cardReview: ".cardReview";

@@ -1,14 +1,28 @@
 <template>
   <div class="cardWithIcon">
     <span class="cardWithIcon-icon">
-      <Icon name="ph:power-light" />
+      <Icon v-if="data?.icon?.value" :name="data?.icon?.value" />
     </span>
-    <BaseHeadLine class="cardWithIcon-title" size="sm"> 1000 واط </BaseHeadLine>
-    <p>صار مستخدماً وبشكله الأصلي في</p>
+    <BaseHeadLine class="cardWithIcon-title" size="sm">
+      {{ data?.title }}
+    </BaseHeadLine>
+    <p>{{ data?.description }}</p>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { IconType } from "~/types/ProductGetType";
+
+const { data } = defineProps({
+  data: {
+    type: {} as PropType<{
+      icon?: IconType | null;
+      title?: string;
+      description?: string;
+    }>,
+  },
+});
+</script>
 
 <style lang="scss">
 $cardWithIcon: ".cardWithIcon";

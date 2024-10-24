@@ -2,28 +2,33 @@
   <div class="reviews">
     <LayoutContainer>
       <BaseHeadLine size="lg" class="reviews-title">
-        شنو قيولو الناس لي جربوه ؟
+        {{ data?.title }}
       </BaseHeadLine>
 
       <div class="grid grid-cols-12 gap-3">
-        <div class="col-span-12">
-          <CardReview />
-        </div>
-        <div class="col-span-12">
-          <CardReview />
-        </div>
-        <div class="col-span-12">
-          <CardReview />
-        </div>
-        <div class="col-span-12">
-          <CardReview />
+        <div class="col-span-12 bg-slate-400" v-for="review in data?.items">
+          <CardReview
+            :data="{
+              title: review.title,
+              description: review.msg,
+              review: review.review,
+            }"
+          />
         </div>
       </div>
     </LayoutContainer>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ProductPageBody } from "~/types/ProductGetType";
+
+const { data } = defineProps({
+  data: {
+    type: {} as PropType<ProductPageBody>,
+  },
+});
+</script>
 
 <style lang="scss">
 $reviews: ".reviews";

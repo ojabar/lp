@@ -3,19 +3,34 @@
     <span class="topBanner-sold"> تخفيض </span>
     <LayoutContainer>
       <BaseHeadLine name="h1" size="xl" class="text-white">
-        منفاخ مكنسة كهربائية</BaseHeadLine
-      >
+        {{ data?.title }}
+      </BaseHeadLine>
       <div class="topBanner-stitle">
-        <strong> منفاخ مكنسة كهربائية 400 واط من TOTAL </strong>
+        <strong> {{ data?.subTitle }} </strong>
       </div>
       <div class="topBanner-img">
-        <NuxtImg class="w-full" src="/assets/images/products/400wat.png" />
+        <div class="topBanner-price">
+          {{ data?.price }} {{ $t("currency") }}
+        </div>
+        <NuxtImg
+          v-for="img in data?.topBannerImage"
+          class="w-full"
+          :src="img.url"
+        />
       </div>
     </LayoutContainer>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ProductPageBody } from "~/types/ProductGetType";
+
+const { data } = defineProps({
+  data: {
+    type: {} as PropType<ProductPageBody>,
+  },
+});
+</script>
 
 <style lang="scss">
 $topBanner: ".topBanner";
@@ -50,6 +65,11 @@ $topBanner: ".topBanner";
       );
       @apply w-full h-20 absolute rounded-[100%] bottom-0;
     }
+  }
+  &-price {
+    @apply absolute top-4 left-0
+     bg-primary  
+     text-xl font-semibold text-white px-4 py-2;
   }
 }
 </style>

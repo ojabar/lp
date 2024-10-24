@@ -68,7 +68,7 @@ const onBlur = () => {
     }"
   >
     <label v-if="label" :for="id" class="inputText-label">{{ label }}</label>
-
+    <!-- 
     <VueDatePicker
       v-if="type === 'date'"
       v-model="inputDateValue"
@@ -79,10 +79,9 @@ const onBlur = () => {
       :locale="locale"
       :format="format"
       :flow="flow"
-    ></VueDatePicker>
+    ></VueDatePicker> -->
 
     <input
-      v-else
       :id="id"
       :type="type"
       :value="modelValue"

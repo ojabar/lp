@@ -1,5 +1,6 @@
 const fr = {
   shopname: "7raifi",
+  currency: "DH",
 
   label: {
     fullname: "Le nom complet",

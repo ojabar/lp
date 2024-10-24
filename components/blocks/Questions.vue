@@ -5,26 +5,39 @@
         class="questions-title text-center font-bold mb-4"
         size="lg"
       >
-        هناك حقيقة مثبتة منذ
-        <strong> زمن طويل </strong>
+        <BaseRichText :data="data?.sectionTitle" />
       </BaseHeadLine>
 
       <div class="grid grid-cols-12 gap-y-3">
-        <div class="col-span-12">
-          <CardInline />
+        <div
+          v-for="(card, index) in data?.sectionPrimaryItems"
+          :key="card.id"
+          class="col-span-12"
+        >
+          <CardInline
+            :data="{
+              title: card.title,
+              description: card.description,
+              imageUrl: card.image?.url,
+            }"
+          />
         </div>
-        <div class="col-span-12">
-          <CardInline direction="left" />
-        </div>
-        <div class="col-span-12">
-          <CardInline />
-        </div>
+
+        <!-- :direction="index % 2 === 0 ? 'right' : 'left'" -->
       </div>
     </LayoutContainer>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ProductPageBody } from "~/types/ProductGetType";
+
+const { data } = defineProps({
+  data: {
+    type: {} as PropType<ProductPageBody>,
+  },
+});
+</script>
 
 <style lang="scss">
 $questions: ".questions";
