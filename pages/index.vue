@@ -50,11 +50,21 @@
 
 <script setup lang="ts">
 import { useProductPage } from "@/composables/useProduct";
+import { productAr, productFr } from "@/public/db";
 
 const locale = ref("ar"); // Or however you manage locale in your project
-const { productPageBody, fetchProductPage } = useProductPage(locale);
 
-await fetchProductPage("lyr3r2t4cvgfermaq6oy83hp");
+const productPageBody = computed(() => {
+  if (locale.value === "ar") {
+    return productAr.product;
+  } else {
+    return productFr.product;
+  }
+});
+
+// const { productPageBody, fetchProductPage } = useProductPage(locale);
+
+// await fetchProductPage("lyr3r2t4cvgfermaq6oy83hp");
 
 // import ProductService from "~/services/ProductService";
 // import type { ProductPageType } from "~/types/ProductGetType";
