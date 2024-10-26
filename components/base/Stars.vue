@@ -1,8 +1,8 @@
 <template>
   <div class="baseStars">
-    <Icon name="ic:round-star" v-for="(r, index) in review" :key="index" />
+    <Icon icon="ic:round-star" v-for="(r, index) in review" :key="index" />
     <Icon
-      name="ic:round-star"
+      icon="ic:round-star"
       v-for="(r, index) in 5 - review"
       :key="'i-' + index"
       class="text-gray-300"
@@ -25,5 +25,6 @@ const { review } = withDefaults(
 $baseStars: ".baseStars";
 
 #{$baseStars} {
+  @apply flex;
 }
 </style>

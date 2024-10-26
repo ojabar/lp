@@ -10,7 +10,12 @@
       </div>
       <div class="topBanner-img">
         <div class="topBanner-price">
-          {{ data?.price }} {{ $t("currency") }}
+          <div class="flex flex-col">
+            <span class="line-through text-secondary text-xs">
+              {{ data?.priceBar }} {{ $t("currency") }}
+            </span>
+            <span>{{ data?.price }} {{ $t("currency") }}</span>
+          </div>
         </div>
         <NuxtImg
           v-for="img in data?.topBannerImage"
@@ -23,11 +28,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ProductPageBody } from "~/types/ProductGetType";
+import type { ComponentBlockTopBanner } from "~/types/ProductGetType";
 
 const { data } = defineProps({
   data: {
-    type: {} as PropType<ProductPageBody>,
+    type: {} as PropType<ComponentBlockTopBanner>,
   },
 });
 </script>

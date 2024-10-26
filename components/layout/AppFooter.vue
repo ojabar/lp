@@ -12,7 +12,7 @@
             <span
               class="flex items-center justify-center bg-white text-primary rounded-md p-2"
             >
-              <Icon v-if="sm.icon?.value" :name="sm.icon?.value" />
+              <Icon v-if="sm.icon?.value" :icon="sm.icon?.value" />
             </span>
             {{ sm.text }}
           </NuxtLink>
@@ -20,7 +20,7 @@
       </ul>
       <hr class="opacity-20 my-3" />
       <div class="text-sm mt-8 flex">
-        <Icon name="ph:copyright" class="text-sm me-1 mt-1" />
+        <Icon icon="ph:copyright" class="text-sm me-1 mt-1" />
         <span>{{ $t("shopname") }} 2024</span>
       </div>
     </LayoutContainer>

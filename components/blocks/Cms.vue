@@ -7,11 +7,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ProductPageBody } from "~/types/ProductGetType";
+import type { ComponentBlockCms } from "~/types/ProductGetType";
 
 const { data } = defineProps({
   data: {
-    type: {} as PropType<ProductPageBody>,
+    type: {} as PropType<ComponentBlockCms>,
   },
 });
 </script>

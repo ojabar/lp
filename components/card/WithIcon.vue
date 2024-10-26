@@ -1,7 +1,7 @@
 <template>
   <div class="cardWithIcon">
     <span class="cardWithIcon-icon">
-      <Icon v-if="data?.icon?.value" :name="data?.icon?.value" />
+      <Icon v-if="data?.icon?.value" :icon="data?.icon?.value" />
     </span>
     <BaseHeadLine class="cardWithIcon-title" size="sm">
       {{ data?.title }}

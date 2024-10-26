@@ -1,6 +1,9 @@
 const ar = {
   shopname: "الحرفي",
   currency: "درهم",
+  button: {
+    buyNow: "اشتري الآن",
+  },
 
   label: {
     fullname: "الاسم الكامل",

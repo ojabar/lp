@@ -2,22 +2,19 @@
   <div class="checkout">
     <LayoutContainer>
       <BaseHeadLine size="xl" class="checkout-title">
-        {{ title }}
+        {{ data?.title }}
       </BaseHeadLine>
-      <FormCheckout :data="data" />
+      <FormCheckout />
     </LayoutContainer>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { ProductPageType } from "~/types/ProductGetType";
+import type { ComponentFromCheckout } from "~/types/ProductGetType";
 
 const { data } = defineProps({
   data: {
-    type: {} as PropType<ProductPageType>,
-  },
-  title: {
-    type: String,
+    type: {} as PropType<ComponentFromCheckout>,
   },
 });
 </script>

@@ -1,7 +1,9 @@
 const fr = {
   shopname: "7raifi",
   currency: "DH",
-
+  button: {
+    buyNow: "Acheter maintenant",
+  },
   label: {
     fullname: "Le nom complet",
     phone: "Téléphone",

@@ -85,6 +85,7 @@ export default class ProductPageService {
               }
             }
             ... on ComponentBlockCms {
+              __typename
               id
               Text
             }
@@ -103,6 +104,13 @@ export default class ProductPageService {
               __typename
               id
               title
+            }
+            ... on ComponentBlockSectionMedia {
+              id
+              medias {
+                url
+                name
+              }
             }
           }
           seo {

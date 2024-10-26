@@ -6,19 +6,19 @@
     <div class="cardImageList-body">
       <ul>
         <li>
-          <Icon :name="listIcon" class="icon" />
+          <Icon :icon="listIcon" class="icon" />
           إقتصادي
         </li>
         <li>
-          <Icon :name="listIcon" class="icon" />
+          <Icon :icon="listIcon" class="icon" />
           كيشد شارج
         </li>
         <li>
-          <Icon :name="listIcon" class="icon" />
+          <Icon :icon="listIcon" class="icon" />
           كيجو معاه جوج باتريات
         </li>
         <li>
-          <Icon :name="listIcon" class="icon" />
+          <Icon :icon="listIcon" class="icon" />
           إقتصادي
         </li>
       </ul>

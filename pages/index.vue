@@ -1,31 +1,23 @@
 <template>
   <div>
-    <div v-for="data in productPageBody?.body">
+    <div v-for="data in productPageBody?.body" :key="data.id">
       <BlocksTopBanner
         v-if="data.__typename === 'ComponentBlockTopBanner'"
         :data="data"
-        class="mb-10"
       />
 
-      <BlocksCms
-        v-if="data.__typename === 'ComponentBlockCms'"
-        :data="data"
-        class="mb-10"
-      />
+      <BlocksCms v-if="data.__typename === 'ComponentBlockCms'" :data="data" />
       <BlocksQuestions
         v-if="data.__typename === 'ComponentBlockSectionPrimary'"
         :data="data"
-        class="mb-10"
       />
       <BlocksProprities
         v-if="data.__typename === 'ComponentBlockSectionSecondary'"
         :data="data"
-        class="mb-10"
       />
       <BlocksOptions
         v-if="data.__typename === 'ComponentBlockSectionDefault'"
         :data="data"
-        class="mb-10"
       />
       <BlocksPromotion
         v-if="data.__typename === 'ComponentBlockSectionPromtions'"
@@ -37,9 +29,16 @@
       />
       <BlocksCheckout
         v-if="data.__typename === 'ComponentFromCheckout' && productPageBody"
-        :data="productPageBody"
-        :title="data.title"
-        class="mb-10"
+        :data="data"
+      />
+      <BlocksMedias
+        v-if="
+          data.__typename === 'ComponentBlockSectionMedia' && productPageBody
+        "
+        :data="data"
+      />
+      <BlocksSpacer
+        v-if="data.__typename === 'ComponentCommonSpacer' && productPageBody"
       />
     </div>
 
@@ -50,17 +49,17 @@
 
 <script setup lang="ts">
 import { useProductPage } from "@/composables/useProduct";
-import { productAr, productFr } from "@/public/db";
 
 const locale = ref("ar"); // Or however you manage locale in your project
+const { productPageBody, fetchProductPage } = useProductPage(locale);
 
-const productPageBody = computed(() => {
-  if (locale.value === "ar") {
-    return productAr.product;
-  } else {
-    return productFr.product;
-  }
-});
+// const productPageBody = computed(() => {
+//   if (locale.value === "ar") {
+//     return productAr.product;
+//   } else {
+//     return productFr.product;
+//   }
+// });
 
 useHead({
   title: productPageBody.value?.seo?.title,
@@ -83,8 +82,6 @@ useHead({
     },
   ],
 });
-
-// const { productPageBody, fetchProductPage } = useProductPage(locale);
 
 // await fetchProductPage("lyr3r2t4cvgfermaq6oy83hp");
 

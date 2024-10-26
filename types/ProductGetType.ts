@@ -3,32 +3,109 @@ export type ProductGetType = {
 };
 
 export type ProductPageType = {
-  body?: ProductPageBody[];
+  body?: (ProductPageBody)[];
   seo?: SEO;
   socialMedia?: SocialMedia[];
 };
 
-export type ProductPageBody = {
-  __typename?:
-    | "ComponentBlockTopBanner"
-    | "ComponentBlockCms"
-    | "ComponentBlockSectionPrimary"
-    | "ComponentBlockSectionSecondary"
-    | "ComponentBlockSectionDefault"
-    | "ComponentBlockSectionPromtions"
-    | "ComponentFromCheckout"
-    | "ComponentBlockSectionReviews";
+export type ComponentBlockTopBanner = {
+  __typename: "ComponentBlockTopBanner";
   id?: string;
   title?: string;
   subTitle?: string;
-  Text?: any;
   topBannerImage?: Image[];
   price?: number;
-  sectionTitle?: SectionTitle[];
+  priceBar?: number;
+};
+
+export type ComponentBlockSectionPrimary = {
+  __typename: "ComponentBlockSectionPrimary";
+  id?: string;
+  sectionTitle?: any;
   sectionPrimaryItems?: SectionPrimaryItem[];
+};
+
+export type ComponentBlockSectionSecondary = {
+  __typename: "ComponentBlockSectionSecondary";
+  id?: string;
+  title?: string;
   image?: Image;
   sectionSecondaryItems?: SectionSecondaryItem[];
+};
+
+export type ComponentBlockSectionDefault = {
+  __typename: "ComponentBlockSectionDefault";
+  id?: string;
+  title?: string;
+  subTitle?: string;
   items?: Item[];
+};
+
+export type ComponentBlockSectionPromotions = {
+  __typename: "ComponentBlockSectionPromtions";
+  id?: string;
+  title?: string;
+  subTitle?: string;
+  items?: Array<{
+    image?: Image;
+    priceNew?: number;
+    priceOld?: number;
+  }>;
+};
+
+export type ComponentBlockSectionReviews = {
+  __typename: "ComponentBlockSectionReviews";
+  id?: string;
+  title?: string;
+  items?: Array<{
+    id?: string;
+    title?: string;
+    msg?: string;
+    review?: number;
+  }>;
+};
+
+export type ComponentBlockCms = {
+  __typename: "ComponentBlockCms";
+  id?: string;
+  Text?: any;
+};
+
+export type ComponentBlockSectionCompare = {
+  __typename: "ComponentBlockSectionCompare";
+  id?: string;
+  title?: string;
+  items?: Array<{
+    id?: string;
+    image?: Image;
+    title?: string;
+  }>;
+};
+
+export type ComponentFromCheckout = {
+  __typename: "ComponentFromCheckout";
+  id?: string;
+  title?: string;
+};
+
+export type ComponentBlockSectionMedia = {
+  __typename: "ComponentBlockSectionMedia";
+  id?: string;
+  medias?: MediaBlock[];
+};
+
+export type ComponentCommonSpacer = {
+  __typename: "ComponentCommonSpacer";
+  id?: string;
+  tablet?: number;
+  mobile?: number;
+  desktop?: number;
+};
+
+export type MediaBlock = {
+  id?: string;
+  url: string;
+  name: string;
 };
 
 export type Image = {
@@ -98,3 +175,16 @@ export type SocialMedia = {
   link: string;
   icon: IconType | null;
 };
+
+export type ProductPageBody =
+  | ComponentBlockTopBanner
+  | ComponentBlockSectionPrimary
+  | ComponentBlockSectionSecondary
+  | ComponentBlockSectionDefault
+  | ComponentBlockSectionPromotions
+  | ComponentBlockSectionReviews
+  | ComponentBlockCms
+  | ComponentBlockSectionCompare
+  | ComponentFromCheckout
+  | ComponentBlockSectionMedia
+  | ComponentCommonSpacer;

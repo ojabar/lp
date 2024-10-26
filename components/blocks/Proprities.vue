@@ -33,11 +33,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ProductPageBody } from "~/types/ProductGetType";
+import type { ComponentBlockSectionSecondary } from "~/types/ProductGetType";
 
 const { data } = defineProps({
   data: {
-    type: {} as PropType<ProductPageBody>,
+    type: {} as PropType<ComponentBlockSectionSecondary>,
   },
 });
 </script>
