@@ -9,7 +9,8 @@ export const useFormCheckout = defineStore("formCheckout", () => {
   const state = reactive({
     fullName: "",
     phone: "",
-    city: "",
+    address: "",
+    quantity: 1,
   });
 
   const rules = {
@@ -19,8 +20,8 @@ export const useFormCheckout = defineStore("formCheckout", () => {
     phone: {
       required: helpers.withMessage(t("error.phone_required"), required),
     },
-    city: {
-      required: helpers.withMessage(t("error.phone_required"), required),
+    address: {
+      required: helpers.withMessage(t("error.adresse_required"), required),
     },
   };
 

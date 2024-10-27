@@ -2,7 +2,7 @@
   <div class="blockMedias">
     <div v-for="(media, index) in data?.medias" :key="index">
       <div v-if="getMediaType(media) === 'mp4'">
-        <video autoplay muted>
+        <video autoplay muted loop>
           <source :src="media.url" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

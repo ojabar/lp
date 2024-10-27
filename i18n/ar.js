@@ -9,6 +9,7 @@ const ar = {
     fullname: "الاسم الكامل",
     phone: "الهاتف",
     city: "المدينة",
+    i_want: "بغيت",
   },
 
   error: {

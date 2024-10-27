@@ -19,11 +19,11 @@
             }"
           />
         </div>
-        <div class="col-span-12 mt-10">
+        <!-- <div class="col-span-12 mt-10">
           <BaseButton type="secondary" size="large" class="w-full">
-            إشتري الآن
+            {{ $t("button.buyNow") }}
           </BaseButton>
-        </div>
+        </div> -->
       </div>
     </LayoutContainer>
   </div>

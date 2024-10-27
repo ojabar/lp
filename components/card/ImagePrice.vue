@@ -10,10 +10,10 @@
     </div>
     <span class="cardPromotion-price">
       <small class="cardPromotion-price-old">
-        {{ data.priceNew }} {{ $t("currency") }}
+        {{ data.priceOld }} {{ $t("currency") }}
       </small>
       <small class="cardPromotion-price-normal">
-        {{ data.priceOld }} {{ $t("currency") }}
+        {{ data.priceNew }} {{ $t("currency") }}
       </small>
     </span>
   </div>

@@ -3,7 +3,7 @@ export type ProductGetType = {
 };
 
 export type ProductPageType = {
-  body?: (ProductPageBody)[];
+  body?: ProductPageBody[];
   seo?: SEO;
   socialMedia?: SocialMedia[];
 };
@@ -47,6 +47,8 @@ export type ComponentBlockSectionPromotions = {
   title?: string;
   subTitle?: string;
   items?: Array<{
+    id?: string;
+    quantity?: number;
     image?: Image;
     priceNew?: number;
     priceOld?: number;

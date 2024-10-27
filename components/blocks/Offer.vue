@@ -13,15 +13,22 @@
         </div>
       </div>
       <div class="mt-5">
-        <BaseButton type="secondary" size="large" class="w-full">
-          إشتري الآن
+        <BaseButton
+          type="secondary"
+          size="large"
+          class="w-full"
+          @click="focusFullName"
+        >
+          {{ $t("button.buyNow") }}
         </BaseButton>
       </div>
     </LayoutContainer>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { focusFullName } from "@/utils/scrollToCheckout";
+</script>
 
 <style lang="scss">
 $offer: ".offer";

@@ -4,7 +4,7 @@ import type { ProductType } from "./ProductType";
 export interface OrderType {
   id?: string;
   fullname: string;
-  city: string;
+  address: string;
   phone: string;
   product?: ProductType;
   quantity?: number;

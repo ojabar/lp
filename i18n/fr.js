@@ -8,6 +8,7 @@ const fr = {
     fullname: "Le nom complet",
     phone: "Téléphone",
     city: "Ville",
+    i_want: "Je veux",
   },
 
   error: {

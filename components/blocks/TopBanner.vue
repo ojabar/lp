@@ -2,7 +2,7 @@
   <div class="topBanner">
     <span class="topBanner-sold"> تخفيض </span>
     <LayoutContainer>
-      <BaseHeadLine name="h1" size="xl" class="text-white">
+      <BaseHeadLine name="h1" size="_2xl" class="text-white">
         {{ data?.title }}
       </BaseHeadLine>
       <div class="topBanner-stitle">
@@ -55,7 +55,7 @@ $topBanner: ".topBanner";
     @apply mt-2 mb-12;
     strong {
       @apply inline-block bg-primary-dark text-white rounded-full
-      px-3 py-1 text-xs;
+      px-3 py-1 text-sm;
     }
   }
   &-img {

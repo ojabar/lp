@@ -36,7 +36,7 @@ $cardInline: ".cardInline";
 
 #{$cardInline} {
   @apply bg-primary-dark rounded-lg p-3
-  flex gap-3 text-white;
+  flex gap-3 text-white items-start;
 
   &--left {
     @apply flex-row-reverse;

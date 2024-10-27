@@ -4,7 +4,11 @@
       <div
         class="flex justify-between items-center text-white font-medium text-xl"
       >
-        <BaseButton type="secondary" class="min-w-[200px]">
+        <BaseButton
+          type="secondary"
+          class="min-w-[200px]"
+          @click="focusFullName"
+        >
           {{ $t("button.buyNow") }}
           <Icon icon="solar:cart-bold" :width="24" :ssr="true" />
         </BaseButton>
@@ -21,6 +25,7 @@
 
 <script setup lang="ts">
 import type { ComponentBlockTopBanner } from "~/types/ProductGetType";
+import { focusFullName } from "@/utils/scrollToCheckout";
 
 const locale = ref("ar");
 const { productPageBody } = useProductPage(locale);
@@ -36,7 +41,7 @@ const topBanner = computed(() => {
 $blockBuyNow: ".blockBuyNow";
 
 #{$blockBuyNow} {
-  @apply fixed bottom-0 left-0 w-full bg-primary-dark
+  @apply fixed bottom-0 left-0 w-full bg-primary-dark z-50
   py-5;
 }
 </style>

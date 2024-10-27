@@ -33,7 +33,7 @@ const { direction, data } = withDefaults(
 $cardInline2: ".cardInline2";
 
 #{$cardInline2} {
-  @apply flex gap-3 text-black;
+  @apply flex gap-3 text-black items-start;
 
   &--left {
     @apply flex-row-reverse;

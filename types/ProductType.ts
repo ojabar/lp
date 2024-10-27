@@ -2,6 +2,7 @@ export type ProductType = {
   id?: string | number;
   permalink?: string;
   title?: string;
+  url?: string;
   price?: ProductPriceType;
   media?: ProductMediaType[];
   characteristics?: ProductCharacteristicType[];

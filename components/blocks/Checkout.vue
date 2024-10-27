@@ -1,12 +1,16 @@
 <template>
+  <!-- <LayoutContainer> -->
   <div class="checkout">
-    <LayoutContainer>
+    <div class="border-b-2 border-secondary py-3 bg-secondary">
       <BaseHeadLine size="xl" class="checkout-title">
         {{ data?.title }}
       </BaseHeadLine>
+    </div>
+    <div class="px-5 py-5">
       <FormCheckout />
-    </LayoutContainer>
+    </div>
   </div>
+  <!-- </LayoutContainer> -->
 </template>
 
 <script setup lang="ts">
@@ -23,9 +27,17 @@ const { data } = defineProps({
 $checkout: ".checkout";
 
 #{$checkout} {
-  @apply pt-8 pb-8 bg-gradient-to-b from-secondary via-secondary-light to-secondary;
+  // @apply pt-8 pb-8;
+  // bg-gradient-to-b from-secondary via-secondary-light to-secondary;
+
+  // margin-bottom: 40px;
+  // border-radius: 11px;
+  // background-color: #f2f2f2;
+  // box-shadow: 0px 0 3px 0px #00000057;
+  @apply border-secondary border-2;
+
   &-title {
-    @apply text-black text-center font-bold mb-4;
+    @apply text-white text-center font-bold;
   }
 }
 </style>
