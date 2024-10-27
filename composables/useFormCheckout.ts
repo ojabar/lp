@@ -26,6 +26,13 @@ export const useFormCheckout = defineStore("formCheckout", () => {
   };
 
   const v$ = useVuelidate(rules, state);
+  const clearFields = () => {
+    state.fullName = "";
+    state.phone = "";
+    state.address = "";
+    state.quantity = 1;
+    v$.value.$reset()
+  };
 
-  return { state, v$ };
+  return { state, v$, clearFields };
 });

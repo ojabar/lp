@@ -57,8 +57,14 @@
       </div>
 
       <div class="mt-5">
-        <BaseButton type="primary" submit size="large" class="w-full">
-          إشتري الآن
+        <BaseButton
+          type="primary"
+          submit
+          size="large"
+          class="w-full"
+          v-loading="loading"
+        >
+          {{ $t("button.buyNow") }}
         </BaseButton>
       </div>
     </form>
@@ -81,7 +87,11 @@
           class="text-center font-normal text-lg leading-[2] mt-5"
         ></div>
         <div class="flex justify-center mt-8">
-          <BaseButton type="secondary" class="min-w-36">
+          <BaseButton
+            type="secondary"
+            class="min-w-36"
+            @click="confirmationModalVisible = false"
+          >
             {{ $t("button.close") }}
           </BaseButton>
         </div>
@@ -102,7 +112,9 @@ const { productPageBody } = useProductPage(locale);
 const orderStore = useOrderStore();
 
 const formCheckout = useFormCheckout();
+const { clearFields } = formCheckout;
 const { state, v$ } = toRefs(formCheckout);
+const loading = ref(false);
 
 const route = useRoute();
 const isClient = useNuxtApp().$isClient;
@@ -119,6 +131,7 @@ const promotion = computed(() => {
 
 const addCommand = async () => {
   try {
+    loading.value = true;
     const fullUrl = `${window.location.origin}${route.fullPath}`;
 
     const order: Omit<OrderType, "cDate" | "uDate" | "dDate" | "state"> = {
@@ -134,12 +147,14 @@ const addCommand = async () => {
       },
       quantity: state.value.quantity,
     };
-    console.log(order);
     await orderStore.addOrder(order);
-
     confirmationModalVisible.value = true;
+    clearFields();
+    
   } catch (error) {
     console.error("Error adding command: ", error);
+  } finally {
+    loading.value = false;
   }
 };
 
