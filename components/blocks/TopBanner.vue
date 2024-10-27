@@ -21,6 +21,7 @@
           v-for="img in data?.topBannerImage"
           class="w-full"
           :src="img.url"
+          :alt="data?.title"
         />
       </div>
     </LayoutContainer>

@@ -50,7 +50,7 @@ export default defineNuxtConfig({
     vueI18n: "./i18n/i18n.config.ts",
     locales: [
       { code: "ar", iso: "ar", dir: "rtl" },
-      { code: "fr", iso: "fr" },
+      // { code: "fr", iso: "fr" },
     ],
     defaultLocale: "ar",
     strategy: "prefix_except_default",

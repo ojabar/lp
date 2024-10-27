@@ -8,4 +8,8 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style lang="scss">
+.layout-default {
+  @apply pb-[84px];
+}
+</style>
