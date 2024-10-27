@@ -3,6 +3,7 @@ const ar = {
   currency: "درهم",
   button: {
     buyNow: "اشتري الآن",
+    close:'إغلاق'
   },
 
   label: {
@@ -24,6 +25,12 @@ const ar = {
     city_required: "المدينة مطلوبة.",
     country_required: "الدولة مطلوبة.",
     phone_required: "رقم الهاتف مطلوب.",
+  },
+
+  message: {
+    orderConfirmation: `تمت معالجة الطلب بنجاح! <br/>
+ لقد تم تقديم طلبك، ونحن نعمل بالفعل على إعداده. <br/>
+ شكرا لثقتكم !`,
   },
 };
 export default ar;

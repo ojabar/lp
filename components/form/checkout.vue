@@ -62,6 +62,31 @@
         </BaseButton>
       </div>
     </form>
+
+    <BaseModal
+      v-model="confirmationModalVisible"
+      size="calc(100% - 40px)"
+      :close-button="true"
+    >
+      <div>
+        <div class="flex justify-center px-5">
+          <Icon
+            icon="lets-icons:check-ring-light"
+            :width="100"
+            class="text-primary"
+          />
+        </div>
+        <div
+          v-html="$t('message.orderConfirmation')"
+          class="text-center font-normal text-lg leading-[2] mt-5"
+        ></div>
+        <div class="flex justify-center mt-8">
+          <BaseButton type="secondary" class="min-w-36">
+            {{ $t("button.close") }}
+          </BaseButton>
+        </div>
+      </div>
+    </BaseModal>
   </div>
 </template>
 
@@ -72,7 +97,7 @@ import type { ComponentBlockSectionPromotions } from "~/types/ProductGetType";
 
 const locale = ref("ar"); // Or however you manage locale in your project
 
-const { productPageBody, fetchProductPage } = useProductPage(locale);
+const { productPageBody } = useProductPage(locale);
 
 const orderStore = useOrderStore();
 
@@ -81,6 +106,8 @@ const { state, v$ } = toRefs(formCheckout);
 
 const route = useRoute();
 const isClient = useNuxtApp().$isClient;
+
+const confirmationModalVisible = ref(false);
 
 console.log("productPageBody", productPageBody.value);
 
@@ -110,10 +137,9 @@ const addCommand = async () => {
     console.log(order);
     await orderStore.addOrder(order);
 
-    alert("Command added successfully!");
+    confirmationModalVisible.value = true;
   } catch (error) {
     console.error("Error adding command: ", error);
-    alert("Error adding command. Please try again.");
   }
 };
 

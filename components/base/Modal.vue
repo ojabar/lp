@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { setHtmlStyle } from '~/utils/document';
+import { setHtmlStyle } from "~/utils/document";
 
-const { to, size, inside, modelValue } = defineProps({
+const { to, size, inside, modelValue, position } = defineProps({
   to: {
     type: String,
-    default: 'body',
+    default: "body",
+  },
+  position: {
+    type: String as PropType<"top" | "right" | "bottom" | "left" | "center">,
+    default: "center",
   },
 
   size: {
     type: String,
-    default: '300px',
+    default: "300px",
   },
   modelValue: {
     type: Boolean,
@@ -25,19 +29,28 @@ const { to, size, inside, modelValue } = defineProps({
   },
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(["update:modelValue", "onClose"]);
 
 const bodySizeStyle = computed(() => {
-  return {
-    width: '100%',
-    height: size,
-    maxHeight: '100%',
-  };
+  if (position === "top" || position === "bottom") {
+    return {
+      width: "100%",
+      height: size,
+      maxHeight: "100%",
+    };
+  } else {
+    return {
+      height: "auto",
+      width: size,
+      maxWidth: "100%",
+      maxHeight: "100%",
+    };
+  }
 });
 
 const closeModal = () => {
-  document.body.style.overflow = '';
-  emit('update:modelValue', false);
+  document.body.style.overflow = "";
+  emit("update:modelValue", false);
 };
 
 const showBody = ref(false);
@@ -50,10 +63,8 @@ const beforeEnter = () => {
 
 const enter = (el: Element, done: () => void) => {
   if (!inside) {
-    console.log(inside);
-
     setHtmlStyle({
-      overflow: 'hidden',
+      overflow: "hidden",
     });
   }
 
@@ -65,11 +76,12 @@ const enter = (el: Element, done: () => void) => {
 
 const leave = (el: Element, done: () => void) => {
   setHtmlStyle({
-    overflow: '',
+    overflow: "",
   });
   showBody.value = false;
   setTimeout(() => {
     showModal.value = false;
+    emit("onClose");
     done();
   }, 300);
 };
@@ -79,7 +91,7 @@ onMounted(() => {
     showModal.value = modelValue;
     if (!inside) {
       setHtmlStyle({
-        overflow: 'hidden',
+        overflow: "hidden",
       });
     }
     setTimeout(() => {
@@ -103,7 +115,11 @@ watch(
 <template>
   <ClientOnly>
     <Teleport :to="to">
-      <div class="modal" :class="{ inside: inside }" v-show="showModal">
+      <div
+        class="modal"
+        :class="['modal', inside ? 'inside' : '', $attrs.class]"
+        v-show="showModal"
+      >
         <Transition
           name="modal-bg"
           @before-enter="beforeEnter"
@@ -114,7 +130,12 @@ watch(
         </Transition>
 
         <Transition name="modal-body">
-          <div v-if="showBody" class="modal-body" :style="[bodySizeStyle]">
+          <div
+            v-if="showBody"
+            class="modal-body"
+            :class="[position]"
+            :style="[bodySizeStyle]"
+          >
             <div v-if="$slots.header" class="modal-header">
               <slot name="header" />
             </div>
@@ -124,7 +145,11 @@ watch(
                 class="modal-closebtn"
                 @click="closeModal"
               >
-                <IconX />
+                <Icon
+                  icon="material-symbols-light:close"
+                  :width="24"
+                  class="text-primary"
+                />
               </BaseButton>
               <slot />
             </div>
@@ -138,7 +163,7 @@ watch(
   </ClientOnly>
 </template>
 <style lang="scss">
-$modal: '.modal';
+$modal: ".modal";
 
 #{$modal} {
   @apply fixed h-dvh w-screen z-[1000] top-0 left-0;
@@ -152,7 +177,7 @@ $modal: '.modal';
   }
 
   &-bg {
-    @apply relative bg-black opacity-40 h-full w-full;
+    @apply relative bg-white opacity-70 h-full w-full;
   }
 
   &-closebtn {

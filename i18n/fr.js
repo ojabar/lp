@@ -3,6 +3,7 @@ const fr = {
   currency: "DH",
   button: {
     buyNow: "Acheter maintenant",
+    close:'Fermer'
   },
   label: {
     fullname: "Le nom complet",
@@ -24,6 +25,12 @@ const fr = {
     country_required: "Le pays est requis.",
     phone_required: "Le numéro de téléphone est requis.",
     prefix_required: "Requis.",
+  },
+
+  message: {
+    orderConfirmation: `Commande traitée avec succès ! <br/>
+     Votre commande a bien été passée, et nous travaillons déjà à sa préparation. <br/>
+      Merci pour votre confiance !`,
   },
 };
 export default fr;

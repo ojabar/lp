@@ -5,7 +5,7 @@
         v-if="data.imageUrl"
         :src="data.imageUrl"
         :alt="'promotion'"
-        class=""
+        class="object-contain"
       />
     </div>
     <span class="cardPromotion-price">
