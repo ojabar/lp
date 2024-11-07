@@ -5,7 +5,7 @@ const productAr = {
     body: [
       {
         __typename: "ComponentBlockTopBanner",
-        id: "41",
+        id: "42",
         title: "منفاخ مكنسة كهربائية ",
         subTitle: "منفاخ مكنسة كهربائية 600 واط من طوطال ",
         topBannerImage: [
@@ -13,12 +13,12 @@ const productAr = {
             url: "/uploads/MAKUTE_600w_main_ef0cf65c5b.png",
           },
         ],
-        price: 300,
+        price: 299,
         priceBar: 400,
       },
       {
         __typename: "ComponentBlockCms",
-        id: "39",
+        id: "40",
         Text: [
           {
             type: "heading",
@@ -52,14 +52,14 @@ const productAr = {
       },
       {
         __typename: "ComponentCommonSpacer",
-        tablet: 60,
+        id: "21",
         mobile: 40,
+        tablet: 60,
         desktop: 80,
-        id: "16",
       },
       {
         __typename: "ComponentBlockSectionPromtions",
-        id: "35",
+        id: "36",
         title: "عرض خاص",
         subTitle: "إلى خذيتي 2 غادي تقتصد 70 درهم",
         items: [
@@ -69,8 +69,6 @@ const productAr = {
             },
             priceNew: 299,
             priceOld: 400,
-            id: "69",
-            quantity: 1,
           },
           {
             image: {
@@ -78,19 +76,16 @@ const productAr = {
             },
             priceNew: 530,
             priceOld: 800,
-            id: "70",
-            quantity: 2,
           },
         ],
       },
       {
         __typename: "ComponentFromCheckout",
-        id: "32",
+        id: "33",
         title: "أدخل معلوماتك",
       },
       {
-        id: "20",
-        __typename: "ComponentBlockSectionMedia",
+        id: "21",
         medias: [
           {
             url: "/uploads/video_b5005c4b96.mp4",
@@ -100,14 +95,14 @@ const productAr = {
       },
       {
         __typename: "ComponentCommonSpacer",
-        tablet: 60,
+        id: "22",
         mobile: 40,
+        tablet: 60,
         desktop: 80,
-        id: "17",
       },
       {
         __typename: "ComponentBlockSectionPrimary",
-        id: "40",
+        id: "41",
         sectionTitle: [
           {
             type: "paragraph",
@@ -126,7 +121,7 @@ const productAr = {
         ],
         sectionPrimaryItems: [
           {
-            id: "262",
+            id: "269",
             title: "كتعاني من صعوبة فتنظيف الأوراق واللوسخ فحديقتك؟",
             description: [
               {
@@ -153,7 +148,7 @@ const productAr = {
             },
           },
           {
-            id: "263",
+            id: "270",
             title: "ما كتلقاش وقت باش تنظف الرصيف أو الكراج ديالك؟",
             description: [
               {
@@ -171,7 +166,7 @@ const productAr = {
             },
           },
           {
-            id: "264",
+            id: "271",
             title: "عندك مشكل مع التراكم ديال الأوساخ بعد الرياح أو الشتاء؟",
             description: [
               {
@@ -189,7 +184,7 @@ const productAr = {
             },
           },
           {
-            id: "265",
+            id: "272",
             title: "محتاج لآلة لتنظيف المناطق اللي صعيب توصل ليهم ؟",
             description: [
               {
@@ -210,21 +205,21 @@ const productAr = {
       },
       {
         __typename: "ComponentCommonSpacer",
-        tablet: 60,
+        id: "23",
         mobile: 40,
+        tablet: 60,
         desktop: 80,
-        id: "18",
       },
       {
         __typename: "ComponentBlockSectionSecondary",
-        id: "38",
+        id: "39",
         title: "الخصائص لي غادي يعطيك",
         image: {
           url: "/uploads/MAKUTE_600w_1_1_min_018e1cee20.png",
         },
         sectionSecondaryItems: [
           {
-            id: "182",
+            id: "187",
             icon: {
               name: "blowing",
               value: "fluent:weather-blowing-snow-48-filled",
@@ -233,7 +228,7 @@ const productAr = {
             description: "نفخ وشفط الأوساخ",
           },
           {
-            id: "183",
+            id: "188",
             icon: {
               name: "muscle",
               value: "hugeicons:body-part-muscle",
@@ -242,7 +237,7 @@ const productAr = {
             description: "600 واط للتنظيف السريع",
           },
           {
-            id: "184",
+            id: "189",
             icon: {
               name: "feather",
               value: "game-icons:feather",
@@ -251,16 +246,7 @@ const productAr = {
             description: "خفة في الاستعمال مع تصميم مريح",
           },
           {
-            id: "185",
-            icon: {
-              name: "settings",
-              value: "hugeicons:settings-04",
-            },
-            title: "سرعة التعديل",
-            description: "سرعة قابلة للتعديل حسب الحاجة",
-          },
-          {
-            id: "186",
+            id: "190",
             icon: {
               name: "shield",
               value: "iconamoon:shield-yes-light",
@@ -272,20 +258,20 @@ const productAr = {
       },
       {
         __typename: "ComponentCommonSpacer",
-        tablet: 60,
+        id: "24",
         mobile: 40,
+        tablet: 60,
         desktop: 80,
-        id: "19",
       },
       {
         __typename: "ComponentBlockSectionDefault",
-        id: "36",
+        id: "37",
         title: "استمتع بتجربة نفخ فائقة الأداء مع نفاخ ماكوت 600W",
         subTitle:
           "توصيل سريع ومجاني، ضمان لمدة عام كامل، وإرشادات سهلة للعناية لضمان أفضل أداء",
         items: [
           {
-            id: "266",
+            id: "273",
             image: {
               url: "/uploads/shipping_min_4c4d855145.jpg",
             },
@@ -303,7 +289,7 @@ const productAr = {
             ],
           },
           {
-            id: "267",
+            id: "274",
             image: {
               url: "/uploads/garantier_min_a4e7054a9d.jpg",
             },
@@ -321,7 +307,7 @@ const productAr = {
             ],
           },
           {
-            id: "268",
+            id: "275",
             image: {
               url: "/uploads/clean_min_b4211a1c09.jpg",
             },
@@ -351,30 +337,30 @@ const productAr = {
       },
       {
         __typename: "ComponentCommonSpacer",
-        tablet: 60,
+        id: "25",
         mobile: 40,
+        tablet: 60,
         desktop: 80,
-        id: "20",
       },
       {
         __typename: "ComponentBlockSectionReviews",
-        id: "34",
+        id: "35",
         title: "شنو قيولو الناس لي جربوه ؟",
         items: [
           {
-            id: "100",
+            id: "103",
             title: "أناس",
             msg: "أداة ممتازة، سهلت عليا تنظيف الحديقة والكراج. الخدمة رائعة وجودة المنتوج عالية.",
             review: 5,
           },
           {
-            id: "101",
+            id: "104",
             title: "أمال",
             msg: "خدمتو رائعة فتنظيف الأوراق المتراكمة واللوسخ الخفيف، وأنا مرتاحة بزاف معاه.",
             review: 5,
           },
           {
-            id: "102",
+            id: "105",
             title: "عبدالقادر",
             msg: "أفضل استثمار عملتو لحد الآن لتنظيف المساحات الخارجية ديالي، أنصح به",
             review: 5,
@@ -393,7 +379,7 @@ const productAr = {
     socialMedia: [
       {
         text: "facebook",
-        link: "https://www.facebook.com/omar.jabar.95/",
+        link: "https://web.facebook.com/brikoli.tools",
         icon: {
           name: "facebook",
           value: "ri:facebook-fill",
@@ -401,425 +387,24 @@ const productAr = {
       },
       {
         text: "instagram",
-        link: "https://www.instagram.com/omar__jabar/",
+        link: "https://www.instagram.com/brikoli.tools/",
         icon: {
           name: "instagram",
           value: "mdi:instagram",
+        },
+      },
+      {
+        text: "Whatsapp",
+        link: "https://wa.me/+212635784056?text=بغيت عافاك هاد المنتج",
+        icon: {
+          name: "facebook",
+          value: "ri:facebook-fill",
         },
       },
     ],
   },
 };
 
-const productFr: ProductGetType = {
-  product: {
-    body: [
-      {
-        __typename: "ComponentBlockTopBanner",
-        id: "41",
-        title: "منفاخ مكنسة كهربائية ",
-        subTitle: "منفاخ مكنسة كهربائية 600 واط من طوطال ",
-        topBannerImage: [
-          {
-            url: "/uploads/MAKUTE_600w_main_ef0cf65c5b.png",
-          },
-        ],
-        price: 300,
-        priceBar: 400,
-      },
-      {
-        __typename: "ComponentBlockCms",
-        id: "39",
-        Text: [
-          {
-            type: "heading",
-            children: [
-              {
-                type: "text",
-                text: "لاش تختار نفاخ ",
-              },
-              {
-                type: "text",
-                text: "ماكوت 600W",
-                bold: true,
-              },
-              {
-                type: "text",
-                text: " ؟",
-              },
-            ],
-            level: 2,
-          },
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "يتميز هاد النفاخ والمكنسة الكهربائية بالجمع بين القوة والمرونة فاستعماله. سواء كنت باغي تنفخ الأوراق أو تشفط الأوساخ، ماكوت كيوفر لك سهولة فالتنقل وفعالية بلا تعب.",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        __typename: "ComponentCommonSpacer",
-        tablet: 60,
-        mobile: 40,
-        desktop: 80,
-        id: "16",
-      },
-      {
-        __typename: "ComponentBlockSectionPromtions",
-        id: "35",
-        title: "عرض خاص",
-        subTitle: "إلى خذيتي 2 غادي تقتصد 70 درهم",
-        items: [
-          {
-            image: {
-              url: "/uploads/one_mkute_30ea0139f0.png",
-            },
-            priceNew: 299,
-            priceOld: 400,
-            id: "69",
-            quantity: 1,
-          },
-          {
-            image: {
-              url: "/uploads/tow_makute_d3bea84567.png",
-            },
-            priceNew: 530,
-            priceOld: 800,
-            id: "70",
-            quantity: 2,
-          },
-        ],
-      },
-      {
-        __typename: "ComponentFromCheckout",
-        id: "32",
-        title: "أدخل معلوماتك",
-      },
-      {
-        id: "20",
-        __typename: "ComponentBlockSectionMedia",
-        medias: [
-          {
-            url: "/uploads/video_b5005c4b96.mp4",
-            name: "video.mp4",
-          },
-        ],
-      },
-      {
-        __typename: "ComponentCommonSpacer",
-        tablet: 60,
-        mobile: 40,
-        desktop: 80,
-        id: "17",
-      },
-      {
-        __typename: "ComponentBlockSectionPrimary",
-        id: "40",
-        sectionTitle: [
-          {
-            type: "paragraph",
-            children: [
-              {
-                type: "text",
-                text: "شنو هي المشاكل اللي كيحلها ",
-              },
-              {
-                type: "text",
-                text: "نفاخ ماكوت 600W؟",
-                bold: true,
-              },
-            ],
-          },
-        ],
-        sectionPrimaryItems: [
-          {
-            id: "262",
-            title: "كتعاني من صعوبة فتنظيف الأوراق واللوسخ فحديقتك؟",
-            description: [
-              {
-                type: "paragraph",
-                children: [
-                  {
-                    type: "text",
-                    text: "نفاخ ماكوت 600W يوفر ليك حل عملي باش تنظف حديقتك بلا مجهود. بقوة ديالو، كيتخلص من الأوراق والغبرة بسرعة وفعالية.",
-                  },
-                ],
-              },
-              {
-                type: "paragraph",
-                children: [
-                  {
-                    type: "text",
-                    text: "",
-                  },
-                ],
-              },
-            ],
-            image: {
-              url: "/uploads/garage_4c0f056fce.png",
-            },
-          },
-          {
-            id: "263",
-            title: "ما كتلقاش وقت باش تنظف الرصيف أو الكراج ديالك؟",
-            description: [
-              {
-                type: "paragraph",
-                children: [
-                  {
-                    type: "text",
-                    text: "هاد النفاخ يسهل عليك تنظيف المساحات الكبيرة وحتى الضيقة، سواءً كانت كراج، رصيف، ولا أي بلاصة خارجية.",
-                  },
-                ],
-              },
-            ],
-            image: {
-              url: "/uploads/495a7a7c7a2b9881dcdb11a3c9f30246_ac18790ca6.webp",
-            },
-          },
-          {
-            id: "264",
-            title: "عندك مشكل مع التراكم ديال الأوساخ بعد الرياح أو الشتاء؟",
-            description: [
-              {
-                type: "paragraph",
-                children: [
-                  {
-                    type: "text",
-                    text: "نفاخ ماكوت كيعاونك فتنظيف اللوسخ اللي كيتجمع بعد العواصف ولا حتى من الأنشطة الخارجية.",
-                  },
-                ],
-              },
-            ],
-            image: {
-              url: "/uploads/winter_d6ca3b1421.png",
-            },
-          },
-          {
-            id: "265",
-            title: "محتاج لآلة لتنظيف المناطق اللي صعيب توصل ليهم ؟",
-            description: [
-              {
-                type: "paragraph",
-                children: [
-                  {
-                    type: "text",
-                    text: "بفضل التصميم الخفيف ديالو وسهولة الاستعمال، غادي تقدر توصل لأي بلاصة وتنظفها بسهولة.",
-                  },
-                ],
-              },
-            ],
-            image: {
-              url: "/uploads/MAKUTE_600w_cc5c56e567.jpg",
-            },
-          },
-        ],
-      },
-      {
-        __typename: "ComponentCommonSpacer",
-        tablet: 60,
-        mobile: 40,
-        desktop: 80,
-        id: "18",
-      },
-      {
-        __typename: "ComponentBlockSectionSecondary",
-        id: "38",
-        title: "الخصائص لي غادي يعطيك",
-        image: {
-          url: "/uploads/MAKUTE_600w_1_1_min_018e1cee20.png",
-        },
-        sectionSecondaryItems: [
-          {
-            id: "182",
-            icon: {
-              name: "blowing",
-              value: "fluent:weather-blowing-snow-48-filled",
-            },
-            title: "وظيفة 2 ف 1",
-            description: "نفخ وشفط الأوساخ",
-          },
-          {
-            id: "183",
-            icon: {
-              name: "muscle",
-              value: "hugeicons:body-part-muscle",
-            },
-            title: "محرك قوي",
-            description: "600 واط للتنظيف السريع",
-          },
-          {
-            id: "184",
-            icon: {
-              name: "feather",
-              value: "game-icons:feather",
-            },
-            title: "الخفة و الراحة ",
-            description: "خفة في الاستعمال مع تصميم مريح",
-          },
-          {
-            id: "185",
-            icon: {
-              name: "settings",
-              value: "hugeicons:settings-04",
-            },
-            title: "سرعة التعديل",
-            description: "سرعة قابلة للتعديل حسب الحاجة",
-          },
-          {
-            id: "186",
-            icon: {
-              name: "shield",
-              value: "iconamoon:shield-yes-light",
-            },
-            title: "صناعة متينة",
-            description: "لضمان الأداء طويل الأمد",
-          },
-        ],
-      },
-      {
-        __typename: "ComponentCommonSpacer",
-        tablet: 60,
-        mobile: 40,
-        desktop: 80,
-        id: "19",
-      },
-      {
-        __typename: "ComponentBlockSectionDefault",
-        id: "36",
-        title: "استمتع بتجربة نفخ فائقة الأداء مع نفاخ ماكوت 600W",
-        subTitle:
-          "توصيل سريع ومجاني، ضمان لمدة عام كامل، وإرشادات سهلة للعناية لضمان أفضل أداء",
-        items: [
-          {
-            id: "266",
-            image: {
-              url: "/uploads/shipping_min_4c4d855145.jpg",
-            },
-            title: "التوصيل",
-            description: [
-              {
-                type: "paragraph",
-                children: [
-                  {
-                    type: "text",
-                    text: "استفد من التوصيل السريع والمجاني على جميع الطلبات الخاصة بنفاخ ماكوت 600W.",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            id: "267",
-            image: {
-              url: "/uploads/garantier_min_a4e7054a9d.jpg",
-            },
-            title: "الضمان",
-            description: [
-              {
-                type: "paragraph",
-                children: [
-                  {
-                    type: "text",
-                    text: "المنتوج مضمون من عند الصانع لمدة عام واحد باش تبقى مرتاح البال.",
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            id: "268",
-            image: {
-              url: "/uploads/clean_min_b4211a1c09.jpg",
-            },
-            title: "كيفية الاعتناء",
-            description: [
-              {
-                type: "paragraph",
-                children: [
-                  {
-                    type: "text",
-                    text: "نظف الفيلتر بانتظام لتحافظ على الأداء العالي.",
-                  },
-                ],
-              },
-              {
-                type: "paragraph",
-                children: [
-                  {
-                    type: "text",
-                    text: "حافظ على الآلة فبلاصة ناشفة باش تبقى تخدم معاك مدة طويلة.",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      {
-        __typename: "ComponentCommonSpacer",
-        tablet: 60,
-        mobile: 40,
-        desktop: 80,
-        id: "20",
-      },
-      {
-        __typename: "ComponentBlockSectionReviews",
-        id: "34",
-        title: "شنو قيولو الناس لي جربوه ؟",
-        items: [
-          {
-            id: "100",
-            title: "أناس",
-            msg: "أداة ممتازة، سهلت عليا تنظيف الحديقة والكراج. الخدمة رائعة وجودة المنتوج عالية.",
-            review: 5,
-          },
-          {
-            id: "101",
-            title: "أمال",
-            msg: "خدمتو رائعة فتنظيف الأوراق المتراكمة واللوسخ الخفيف، وأنا مرتاحة بزاف معاه.",
-            review: 5,
-          },
-          {
-            id: "102",
-            title: "عبدالقادر",
-            msg: "أفضل استثمار عملتو لحد الآن لتنظيف المساحات الخارجية ديالي، أنصح به",
-            review: 5,
-          },
-        ],
-      },
-    ],
-    seo: {
-      title: "منفاخ مكنسة كهربائية 400 واط من طوطال ",
-      description: "أداة قوية لتنظيف المساحات الكبيرة والصغيرة",
-      permalink: "total-600w",
-      image: {
-        url: "/uploads/MAKUTE_600w_cc5c56e567.jpg",
-      },
-    },
-    socialMedia: [
-      {
-        text: "facebook",
-        link: "https://www.facebook.com/omar.jabar.95/",
-        icon: {
-          name: "facebook",
-          value: "ri:facebook-fill",
-        },
-      },
-      {
-        text: "instagram",
-        link: "https://www.instagram.com/omar__jabar/",
-        icon: {
-          name: "instagram",
-          value: "mdi:instagram",
-        },
-      },
-    ],
-  },
-};
+const productFr: ProductGetType = {};
 
 export { productAr, productFr };

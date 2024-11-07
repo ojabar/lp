@@ -36,10 +36,10 @@ const { data } = withDefaults(
 $cardPromotion: ".cardPromotion";
 
 #{$cardPromotion} {
-  @apply flex flex-col items-center p-4 bg-black rounded-lg;
-  --tw-bg-opacity: 0.1;
+  @apply flex flex-col items-center p-4 bg-white rounded-lg;
+  // --tw-bg-opacity: 0.1;
   &-img {
-    @apply h-28 w-full mb-5;
+    @apply h-28 w-full mb-0;
     img {
       @apply h-full mx-auto;
     }
@@ -48,7 +48,7 @@ $cardPromotion: ".cardPromotion";
     @apply text-secondary text-2xl font-bold text-center;
 
     &-old {
-      @apply text-xs line-through text-white font-medium block;
+      @apply text-sm line-through text-primary font-medium block;
     }
     &-normal {
       @apply block leading-none;

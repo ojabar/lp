@@ -11,7 +11,7 @@
       <div class="topBanner-img">
         <div class="topBanner-price">
           <div class="flex flex-col">
-            <span class="line-through text-secondary text-xs">
+            <span class="line-through font-bold text-primary-dark text-sm">
               {{ data?.priceBar }} {{ $t("currency") }}
             </span>
             <span>{{ data?.price }} {{ $t("currency") }}</span>
@@ -74,7 +74,7 @@ $topBanner: ".topBanner";
   }
   &-price {
     @apply absolute top-4 left-0
-     bg-primary  
+     bg-secondary  
      text-xl font-semibold text-white px-4 py-2;
   }
 }
