@@ -9,7 +9,7 @@ const ar = {
   label: {
     fullname: "الاسم الكامل",
     phone: "الهاتف",
-    city: "المدينة",
+    city: "العنوان و المدينة",
     i_want: "بغيت",
   },
 

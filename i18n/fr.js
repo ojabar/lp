@@ -8,7 +8,7 @@ const fr = {
   label: {
     fullname: "Le nom complet",
     phone: "Téléphone",
-    city: "Ville",
+    city: "Adresse et ville",
     i_want: "Je veux",
   },
 
