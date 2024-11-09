@@ -3,6 +3,7 @@
     <slot />
     <LayoutAppFooter />
     <BlocksBuyNowStickey />
+    <ButtonWhatsapp />
   </div>
 </template>
 
