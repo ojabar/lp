@@ -47,6 +47,9 @@ importers:
       vue:
         specifier: latest
         version: 3.5.12
+      vue-gtag-next:
+        specifier: ^1.14.0
+        version: 1.14.0(vue@3.5.12)
       vue-router:
         specifier: latest
         version: 4.4.5(vue@3.5.12)
@@ -4561,6 +4564,11 @@ packages:
 
   vue-devtools-stub@0.1.0:
     resolution: {integrity: sha512-RutnB7X8c5hjq39NceArgXg28WZtZpGc3+J16ljMiYnFhKvd8hITxSWQSQ5bvldxMDU6gG5mkxl1MTQLXckVSQ==}
+
+  vue-gtag-next@1.14.0:
+    resolution: {integrity: sha512-iJl+cOG2GU5NuxqzSSIpt03WVOvZqyKB9TOy7d55KiuvRklcnb2nlqxW5B/a3/sbIt7fla+XEkRyMCcoz0zAHw==}
+    peerDependencies:
+      vue: ^3.0.0-rc.11
 
   vue-i18n@9.14.1:
     resolution: {integrity: sha512-xjxV0LYc1xQ8TbAVfIyZiOSS8qoU1R0YwV7V5I8I6Fd64+zvsTsdPgtylPsie3Vdt9wekeYhr+smKDeaK6RBuA==}
@@ -10076,6 +10084,10 @@ snapshots:
       vue: 3.5.12
 
   vue-devtools-stub@0.1.0: {}
+
+  vue-gtag-next@1.14.0(vue@3.5.12):
+    dependencies:
+      vue: 3.5.12
 
   vue-i18n@9.14.1(vue@3.5.12):
     dependencies:
