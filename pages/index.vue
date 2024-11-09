@@ -1,7 +1,5 @@
 <template>
   <div>
-    <img :src="productPageBody?.seo?.image?.url" alt="" />
-    {{ productPageBody?.seo?.image?.url }}
     <div v-for="data in productPageBody?.body" :key="data.id">
       <BlocksTopBanner
         v-if="data.__typename === 'ComponentBlockTopBanner'"
