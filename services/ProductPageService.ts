@@ -15,6 +15,7 @@ export default class ProductPageService {
                 url
               }
               price
+              priceBar
             }
             ... on ComponentBlockSectionPrimary {
               __typename
@@ -71,6 +72,8 @@ export default class ProductPageService {
                 }
                 priceNew
                 priceOld
+                id
+                quantity
               }
             }
             ... on ComponentBlockSectionReviews {
@@ -107,10 +110,18 @@ export default class ProductPageService {
             }
             ... on ComponentBlockSectionMedia {
               id
+              __typename
               medias {
                 url
                 name
               }
+            }
+            ... on ComponentCommonSpacer {
+              __typename
+              tablet
+              mobile
+              desktop
+              id
             }
           }
           seo {
