@@ -5,9 +5,10 @@
       <hr class="opacity-20 my-3" />
       <ul class="flex flex-col gap-y-3 my-5">
         <li v-for="sm in productPageBody?.socialMedia">
-          <NuxtLink
+          <a
             class="inline-flex font-semibold gap-x-3 items-center"
-            :to="sm.link"
+            :href="sm.link"
+            target="_blank"
           >
             <span
               class="flex items-center justify-center bg-white text-primary rounded-md p-2"
@@ -15,7 +16,7 @@
               <Icon v-if="sm.icon?.value" :icon="sm.icon?.value" />
             </span>
             {{ sm.text }}
-          </NuxtLink>
+          </a>
         </li>
       </ul>
       <hr class="opacity-20 my-3" />
