@@ -1,5 +1,7 @@
 <template>
   <div>
+    <img :src="productPageBody?.seo?.image?.url" alt="" />
+    {{ productPageBody?.seo?.image?.url }}
     <div v-for="data in productPageBody?.body" :key="data.id">
       <BlocksTopBanner
         v-if="data.__typename === 'ComponentBlockTopBanner'"
@@ -78,7 +80,13 @@ useHead({
     },
     {
       property: "og:image",
-      content: productPageBody.value?.seo?.image?.url,
+      content:
+        productPageBody.value?.seo?.image?.url ||
+        "/uploads/MAKUTE_600w_cc5c56e567.jpg",
+    },
+    {
+      property: "og:image:alt",
+      content: productPageBody.value?.seo?.title || "Product image", // Optional alt text for the image
     },
   ],
 });
