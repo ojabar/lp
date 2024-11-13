@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@hotjar/browser": "^1.0.9",
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/firebase": "^8.2.2",
     "@nuxtjs/i18n": "^8.5.3",
